@@ -1,0 +1,221 @@
+/* Full page view, ensuring the game page can scroll */
+#game-page {
+  width: 100vw;
+  min-height: 100vh; /* Minimum height to ensure it takes at least the full viewport */
+  position: relative;
+  overflow-y: auto; /* Allow vertical scrolling within the game page */
+  padding-bottom: 60px; /* Space for footer if necessary */
+  box-sizing: border-box; /* Make sure padding does not overflow */
+}
+
+/* Player icons and names */
+.player {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: top 0.5s ease, bottom 0.5s ease, left 0.5s ease, right 0.5s ease; /* Smooth transition */
+  transform: scale(0.8); /* Scale down the icon */
+
+}
+
+/* Player 1 icon in the bottom-left corner */
+.player1 {
+  bottom: 20px;
+  left: 40px;
+  margin-bottom: 4rem;
+}
+
+/* Player 2 icon in the top-right corner */
+.player2 {
+  top: 20px;
+  right: 40px;
+  
+}
+
+/* Circle for profile images */
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+}
+
+/* Player name styling */
+.player-name {
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Cards container */
+.cards {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  transform: scale(0.53); /* Keep the scaling */
+  transform-origin: center bottom; /* Set scaling origin to the bottom */
+  transition: transform 0.5s ease; /* Smooth scaling transition */
+}
+
+/* Player 1 cards at the very bottom */
+.cards[player1-cards] {
+  bottom: 0; /* Place at the bottom */
+  transform-origin: center bottom; /* Ensure it scales toward the bottom edge */
+  margin-bottom: 4rem;
+}
+
+/* Ensure Player 1's cards are fully opaque */
+.cards[player1-cards] .card-wrapper {
+  opacity: 1;
+}
+h3 {
+  font-size: 2rem; /* Adjust the size as needed */
+  margin-top: 1rem;
+}
+/* Player 2 cards at the very top */
+.cards[player2-cards] {
+  position: relative;
+  transform-origin: center top; /* Ensure it scales toward the top edge */
+  transform: scale(0.4);
+  bottom: 25%;
+  transition: bottom 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+/* Card scaling (optional) */
+.player-cards .card-wrapper {
+  margin: 0.5rem; /* Small margin between cards */
+  opacity: 1;
+}
+button {
+  transform: scale(0.9);
+}
+/* Prevent scrolling on body only when on #game-page */
+body.game-page {
+  overflow: hidden; /* Prevent scrolling on the body */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Ensure body takes up full height */
+}
+
+/* Hide the footer on the game page */
+body.game-page footer {
+  display: none;
+}
+
+/* Allow scrolling of the game page itself */
+#game-page {
+  overflow-y: auto; /* Allow vertical scrolling within game page */
+}
+
+/* Ensure proper scrolling of content within #game-page */
+body:not(.game-page) {
+  overflow: auto; /* Allow body to scroll on other pages */
+}
+
+/* Additional styles for displaying the selected card */
+.selected-card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Game over message styling */
+/* Game over message styling */
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 600px;
+  z-index: 1001; /* Ensure it is above the overlay */
+  text-align: center; /* Center the text */
+
+}
+
+
+/* Card styling */
+.card-wrapper {
+    position: relative;
+    
+  }
+  .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Bring the overlay image to the front */
+    pointer-events: none; /* Ensures the image doesn't interfere with card interactions */
+  }
+  .card-wrapper > :not(.overlay-image) {
+    position: relative;
+    z-index: 0; /* Ensure other content is behind the overlay */
+  }
+  .cards[player1-cards] .card-wrapper {
+    cursor: pointer; /* Change cursor to pointer for Player 1's cards */
+  }
+  .selected-stat-icon {
+    position: absolute;
+    top: 12rem;
+    left: 15rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0.7rem; /* Add padding to make the circle bigger */
+    border-radius: 50%; /* Make the div circular */
+    border: 0.2rem solid #f6f6f6; /* Add a border to create the circle effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box; /* Ensure padding is included in the element's size */
+  }
+
+  .selected-stat-icon img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .message-container {
+    position: absolute;
+    right: 10%; /* Adjust to move more to the left */
+    top: 40%;
+    transform: translateY(-50%);
+    width: 200px; /* Adjust width as needed */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .message-container.show {
+    opacity: 1;
+  }
+
+  /* Add your other styles here */  
+/* Responsive view for smaller screens */
+@media (max-width: 768px) {
+  .cards[player2-cards] {
+    transform: scale(0.8); /* Scale Player 2's cards on smaller screens */
+    bottom: 20%; /* Slightly adjust bottom positioning for better alignment */
+  }
+}

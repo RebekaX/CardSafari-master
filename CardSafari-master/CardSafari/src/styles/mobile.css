@@ -1,0 +1,82 @@
+/* Mobile styles */
+@media (max-width: 768px) {
+  #home {
+    text-align: center;
+  }
+
+  #home .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #home .full-width-image {
+    width: 50%; /* Adjust width to 50% */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    object-fit: cover;
+  }
+
+  #home .centered-title {
+    position: static;
+    transform: none;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  #home .highlighted-text {
+    font-size: 3rem;
+  }
+
+  #home .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  #home .text-content {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #home .info-text {
+    margin: 1rem;
+  }
+
+  #home .fun-fact {
+    margin-left: 0;
+    margin-bottom: 4rem;
+  }
+
+  #home .how-it-works {
+    margin-top: 5rem; /* Adjust margin-top to move it lower */
+    height: 8rem; /* Adjust height as needed */
+    padding-bottom: 5rem; /* Add padding to create space between sections */
+  }
+
+  #home .hexagon-container {
+    top: 90%; /* Adjust top to move it lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 10rem;
+  }
+
+  #home .hexagon {
+    width: 8em; /* Adjust width as needed */
+    height: 8rem; /* Adjust height as needed */
+  }
+
+  #home .random-cards {
+    align-items: center;
+    transform: scale(0.9);
+    margin-top: 2rem;
+    margin-right: 0;
+  }
+
+  #home .button-container {
+    margin-bottom: 1rem;
+  }
+}

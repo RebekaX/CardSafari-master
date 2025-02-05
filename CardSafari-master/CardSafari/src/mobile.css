@@ -1,0 +1,87 @@
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    #home .how-it-works {
+      margin-top: 30rem;
+      height: 8rem; /* Adjust height as needed */
+    }
+
+    #home .full-width-image {
+      width: 100%; /* Adjust width to 50% */
+      height: 20rem; /* Adjust height to maintain aspect ratio */
+      object-fit: cover;
+    }
+
+    #home .hexagon-container {
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      flex-direction: column;
+      gap: 5rem;
+      margin-top: 10rem;
+    }
+
+    #home .hexagon {
+      width: 3em; /* Adjust width as needed */
+      height: 3rem; /* Adjust height as needed */
+    }
+
+    #home .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    #home .text-content {
+      max-width: 80%;
+    }
+
+    #home h1 {
+      font-size: 1.5rem;
+      color: white; 
+      margin: 0.5rem;
+    }
+
+    #home .highlighted-text {
+      font-size: 4rem;
+    }
+
+    #home .centered-title {
+      position: absolute;
+      top: 40%;
+      right: 40%;
+    }
+
+    #home .random-cards {
+      align-items: center;
+      margin-top: -40rem;
+      margin-right: 0;
+    }
+  }
+
+  #home .centered-title {
+    position: absolute;
+    top: 40%;
+    right: 10%; 
+    transform: translate(0, -50%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  #home .fun-fact {
+    margin-top: 5rem;
+    padding: 1rem;
+    border: 2px solid #9340b7;
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-bottom: 8rem;
+    margin-top: 3rem;
+  }
+  
